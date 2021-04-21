@@ -1,1 +1,1 @@
-# diaryapp
+# Small Diary App Using Postgres
