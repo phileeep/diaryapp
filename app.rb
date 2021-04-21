@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-# require './lib/bookmark'
+require './lib/entry.rb'
 
 class DiaryApp < Sinatra::Base
   configure :development do
@@ -8,7 +8,12 @@ class DiaryApp < Sinatra::Base
   end
 
   get '/' do
+    @entries = Entry.all
     erb(:index)
+  end
+
+  get '/' do
+    erb(:entries)
   end
 
   run! if app_file == $0
