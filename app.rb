@@ -12,8 +12,12 @@ class DiaryApp < Sinatra::Base
     erb(:index)
   end
 
-  get '/' do
-    erb(:entries)
+  post '/new' do
+    entry_title = params[:title]
+    entry_text = params[:entry]
+    entry = Entry.new
+    entry.create(entry_title)
+    redirect '/'
   end
 
   run! if app_file == $0

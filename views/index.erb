@@ -1,8 +1,24 @@
-Hello from the world
+<html>
+  <title>My Diary App</title>
+  <body>
+    <h1>Hello from the world</h1>
 
-Here are all the entries : 
-<%= @entries %>
+    <h2>Here are all the entries: </h2>
+    <p><%= @entries %></p>
+    <br>
+    <form action='/new' method='post'>
+      <label for='title'>The title of your post is:</label>
+      <input type='text' name='title' placeholder='Enter your title here' required>
+      <br>
+      <label for='entry'>Your Diary Entry:</label>
+      <input type='text' name='entry' placeholder='Enter your entry here' required>
+      <br>
+      <input type='submit' value='Submit'>
+    </form>
 
-<form action='/entries' method='post'>
-  <input type='submit' value='Click to see all entries'>
-</form>
+    <form action='/entries' method='get'>
+      <input type='submit' value='Click to see all entries'>
+    </form>
+    
+  </body>
+</html>
